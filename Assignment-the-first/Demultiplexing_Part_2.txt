@@ -1,0 +1,43 @@
+sudo code for completing part 2 
+
+4. Develop your algorithim using psudocode
+
+# def reverse transcription  
+    ```Takes the sequence line and if its in the dictionary it returns the reverse transcriptome ```
+    return revese transcription
+create a dictionary = {}
+key - 4 diffrent bases 
+value - reverse transcriptome 
+
+# def append the index to the header
+    ``` attaches the appropriate index to each read ```
+    return header with an index 
+input - header 
+out put - index-header 
+
+open (all 4 files) #using args parse to read and write out to a file 
+readline 
+strip(\n)
+get the sequence line
+get the header line 
+[place ---- in record]
+call reverse transcription complement
+if the index read contains (N-unknown)
+    write into unknown file
+else:
+    compare b/n r2 & r3 are the same
+    write r1 and r4 into the corresponding files
+else:
+    if it's not the same
+    write into an index hopped coresponding files
+
+empty out the record 
+
+The number of read-pairs with properly matched indexes (per index-pair) 
+the number of read pairs with index-hopping observed, and
+the number of read-pairs with unknown index(es)
+        ``` since they will be outputted to a specific file we can do a word count (wc -l) to the appropriate files. ```
+
+
+
+

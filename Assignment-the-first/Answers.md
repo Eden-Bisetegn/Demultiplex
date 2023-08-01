@@ -19,7 +19,7 @@
     
 ## Part 2
 1. Define the problem
-2. Describe output
+2. Describe output - we would have 6 files for the output 2-matched(for the reads and indexes that match), 2-unknown(for the reads that contain "N"), 2-index-hopped (for the reads that )
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
 4. Pseudocode
 5. High level functions. For each function, be sure to include:

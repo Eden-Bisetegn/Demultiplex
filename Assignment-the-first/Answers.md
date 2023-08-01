@@ -11,7 +11,7 @@
 | 1294_S1_L008_R4_001.fastq.gz | read2 | 101 | Phred33+ |
 
 2. Per-base NT distribution
-    1. Use markdown to insert your 4 histograms here.
+    1. Use markdown to insert your 4 histograms here.![read2barplt](Read2.png)![read3barplt](Read3.png)![read1barplt]![Read4barplt](Read4.png)(Read1.png)
     2. For both index and biological read I chose a min of phred 30 (1 in 1000). Since index reads are used to identify which sample belongs to which read we should have a higher expectation of quality to lower the chance of                 misidentifying samples.
     As for the biological reads, we would need a high-quality score to get a more accurate base call and avoid misalignment of reads for the next step of the project
        

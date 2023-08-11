@@ -1,0 +1,46 @@
+Part 1
+Demultiplexing
+1. data exploration
+Determine what the file contains 
+    1294_S1_L008_R1_001.fastq.gz  --- Biological read 1
+    1294_S1_L008_R2_001.fastq.gz  --- Index 1
+    1294_S1_L008_R3_001.fastq.gz  --- Index 2
+    1294_S1_L008_R4_001.fastq.gz  --- Biological read 2
+Determine all the length of the reads
+    zcat <filename> | wc -1
+    Read 1 - 1452986940
+    index 1 -1452986940
+    Read 2 - 1452986940
+    index 2 -1452986940
+Determine all the phred encoding of the data
+    <put how you determine the phred score>
+    if "#" existes in the quality score line then we can assume that the phred encoding is phred 33
+
+Final_Demultiplexing
+
+Functions 
+    for demultiplexing the data we needed to make some functions such as the reverse complement- for reversr compleenting the index to loop through and cheak if they are matched or unmatched. 
+    for a human readable setting the sequence is also being reversed so that we can quickly cheak their similarities
+Out put file
+    for creating all of our output files based on the 24 indexes that were given to us in a file we looped through and saved all the sequences and saved them in a list
+    creating a dictionary we loop through the file and automatically write to a new file with the indexes set as names to the file.
+    we would need 2 files for each index because we have 2 Biologicalreads which would give as a total of 48 files to store the matched indexes.
+    To store the index hopped and unknown we would need to open a file to write into later on, which would brng us to a total of 52 files overall
+Read files in records across the 4 files at the same time 
+    To oped and read through files with this size and do it simountanousily we would have to create an empty recoed for all 4 files.
+    The record created is a list with 4 positions so we can look at the 4 lines of the fastq files one at a time
+List conditionals/Pass everything to its prospective files.
+    once we are reading through the data we have to filter out the data with diffrent conditionals.
+    unknown: If the indexes have an unknown(consists of an "N") & if the 2 indexes are not found in our special set of indexes we are comparing them to
+    Hopped: if the 2 indexes are not equal to each other then we can determine that it has been hopped
+    matched : after the reverse transcription has been applied if the 2 indexes have matched 
+Write out the calculations into a new file:
+report the number of hopped reads/matched reads/unknown reads
+    matched: matched values, how many times they matched, percentage compared to overall matched 
+    Hopped: hopped values, how many times they hopped, percentage compared to overall hoppped
+    unknown: report the overall number of unknown reads
+    
+    
+
+     
+
